@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+    	#app {
+		width: 300px;
+		margin: 100px auto;
+    	}
+
+    	#app  h1{ 
+		font-size: 72px;
+		line-height: 55px;
+		margin: 10px;
+		text-align: center;
+    	 }
+
+    	 #app button {
+		display: inline-block;
+		width: 50%;
+		padding: 10px 20px;
+		font-size: 15px;
+		margin-top: 30px;
+		background: #dfe5e8;
+		border: 1px solid #c8ced2;
+		cursor: pointer;
+    	 }
+
+    	 #app button:active {
+		outline: none;
+    	 }
+
+    	 #app button:nth-child(2) {
+    	 	border-top-left-radius: 5px;
+    	 	border-bottom-left-radius: 5px;
+    	 }
+
+    	 #app button:nth-child(3) {
+    	 	border-top-right-radius: 5px;
+    	 	border-bottom-right-radius: 5px;
+    	 }
+    </style>
+</head>
+<body>
+    <main id="app"></main>
+    <script>
+    	let isReact = window.location.search.indexOf('isreact') > -1;
+    	let script = document.createElement('script');
+
+    	script.src = '/dist/' + ( isReact ? 'main-react' : 'main' ) + '.js'; 
+    	document.body.appendChild(script);
+    </script>
+</body>
+</html>
